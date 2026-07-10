@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "./tokens.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--type-body);
+  --font-mono: var(--type-label);
+  --font-heading: var(--type-display);
+  --font-display: var(--type-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-amber: var(--amber);
+  --color-amber-dim: var(--amber-dim);
+  --color-bay: var(--bay);
+  --color-bay-bright: var(--bay-bright);
+  --ease-reveal: var(--ease-reveal);
+  --ease-tide: var(--ease-tide);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+  /* Sidebar aliases kept for shadcn components; values come from tokens.css */
+  --sidebar: var(--card);
+  --sidebar-foreground: var(--card-foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  ::selection {
+    background: var(--amber);
+    color: var(--background);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--type-display);
+  }
+  .text-label {
+    font-family: var(--type-label);
+    font-size: 0.72rem;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+}
+
+/* === Continuous gradient canvas ===
+   One tall fixed layer behind the whole page. Its background-position drifts
+   with scroll (via CSS custom property set from JS) so the sunset-to-sea
+   gradient itself moves at a different speed than the content sitting on
+   top of it — the "canvas", not a stack of section backgrounds. */
+.gradient-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background: linear-gradient(
+    var(--canvas-angle, 165deg),
+    var(--canvas-sunset-stop-1) 0%,
+    var(--canvas-sunset-stop-2) 32%,
+    var(--canvas-sunset-stop-3) 66%,
+    var(--canvas-sunset-stop-4) 100%
+  );
+  background-size: 100% 340vh;
+  background-position: 0% var(--canvas-shift, 0%);
+  transition: background-position 0.05s linear;
+  will-change: background-position;
+}
+
+.gradient-canvas::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(246, 238, 221, 0.06) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}
+
+/* The "sun" — a soft glow that sinks from top to horizon as you scroll,
+   sourced from the amber/bay token pair so it reads as dusk light
+   dissolving into the bay rather than a decorative blob. */
+.canvas-sun {
+  position: absolute;
+  left: 50%;
+  top: -10vh;
+  width: min(70vw, 46rem);
+  height: min(70vw, 46rem);
+  transform: translate(-50%, var(--sun-y, 0)) scale(var(--sun-scale, 1.15));
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(240, 201, 138, 0.55) 0%,
+    rgba(217, 123, 52, 0.32) 38%,
+    rgba(31, 110, 122, 0.14) 62%,
+    transparent 78%
+  );
+  filter: blur(2px);
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .gradient-canvas {
+    transition: none;
+  }
+}

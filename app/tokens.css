@@ -1,0 +1,84 @@
+/* Design Tokens - Auto-generated */
+/* Do not edit directly - modify tokens.json instead */
+
+/* === PRIMITIVES === */
+:root {
+  --primitive-color-dusk-700: #284F5D;
+  --primitive-color-dusk-800: #1B3A47;
+  --primitive-color-dusk-900: #132732;
+  --primitive-color-dusk-950: #0E1A22;
+  --primitive-color-bay-300: #7ECBBE;
+  --primitive-color-bay-400: #4CACA6;
+  --primitive-color-bay-500: #2E8C93;
+  --primitive-color-bay-600: #1F6E7A;
+  --primitive-color-amber-300: #F0C98A;
+  --primitive-color-amber-400: #E8A559;
+  --primitive-color-amber-500: #D97B34;
+  --primitive-color-amber-600: #B5501F;
+  --primitive-color-sand-100: #F6EEDD;
+  --primitive-color-sand-300: #E5D6B8;
+  --primitive-color-sand-500: #B9A87E;
+  --primitive-font-display: var(--font-fraunces), 'Fraunces', Georgia, serif;
+  --primitive-font-sans: var(--font-manrope), system-ui, sans-serif;
+  --primitive-font-mono: var(--font-geist-mono), 'SF Mono', monospace;
+  --primitive-motion-duration-micro: 180ms;
+  --primitive-motion-duration-base: 320ms;
+  --primitive-motion-duration-reveal: 1.2s;
+  --primitive-motion-duration-drift: 2.4s;
+  --primitive-motion-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --primitive-motion-ease-tide: cubic-bezier(0.45, 0, 0.25, 1);
+  --primitive-tracking-display: -0.02em;
+  --primitive-tracking-label: 0.22em;
+}
+
+/* === SEMANTIC === */
+:root {
+  --background: #0E1A22;
+  --foreground: #F6EEDD;
+  --card: #132732;
+  --card-foreground: #F6EEDD;
+  --popover: #132732;
+  --popover-foreground: #F6EEDD;
+  --primary: #F6EEDD;
+  --primary-foreground: #0E1A22;
+  --secondary: #1B3A47;
+  --secondary-foreground: #F6EEDD;
+  --muted: #132732;
+  --muted-foreground: #B9A87E;
+  --accent: #1B3A47;
+  --accent-foreground: #F6EEDD;
+  --destructive: #B5501F;
+  --border: #284F5D;
+  --input: #284F5D;
+  --ring: #D97B34;
+  --radius: 0.25rem;
+  --amber: #D97B34;
+  --amber-dim: #B5501F;
+  --bay: #2E8C93;
+  --bay-bright: #7ECBBE;
+  --surface-line: #284F5D;
+  --type-display: var(--font-fraunces), 'Fraunces', Georgia, serif;
+  --type-body: var(--font-manrope), system-ui, sans-serif;
+  --type-label: var(--font-geist-mono), 'SF Mono', monospace;
+  --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-tide: cubic-bezier(0.45, 0, 0.25, 1);
+  --duration-micro: 180ms;
+  --duration-base: 320ms;
+  --duration-reveal: 1.2s;
+  --tracking-display: -0.02em;
+  --tracking-label: 0.22em;
+}
+
+/* === COMPONENTS === */
+:root {
+  --canvas-sunset-stop-1: #0E1A22;
+  --canvas-sunset-stop-2: #B5501F;
+  --canvas-sunset-stop-3: #1F6E7A;
+  --canvas-sunset-stop-4: #0E1A22;
+  --button-primary-bg: #F6EEDD;
+  --button-primary-fg: #0E1A22;
+  --button-primary-hover-bg: #D97B34;
+  --button-primary-hover-fg: #0E1A22;
+  --button-ghost-border: #284F5D;
+  --button-ghost-hover-border: #B9A87E;
+}
