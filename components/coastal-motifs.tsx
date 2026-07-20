@@ -1,7 +1,7 @@
-/** Decorative line-art, not photography — the site has no stock or stand-in
- * food photos, since none of the real ones were available to source
- * honestly. These motifs (wave, grapevine, sail) carry the coastal /
- * terrace character instead. */
+/** Decorative line-art that sits *alongside* the photography, never in place
+ * of it. The venue's own photos (konobajaz.weebly.com, `_orig`) carry the
+ * evidence; these motifs (wave, grapevine, sail) only carry rhythm between
+ * them. No stock and no stand-in food photos anywhere on this site. */
 
 export function WaveLines({ className }: { className?: string }) {
   return (

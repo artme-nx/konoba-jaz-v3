@@ -1,12 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import { BASE } from "@/components/photo";
 
 const LINKS = [
   { href: "#dobrodosli", label: "Dobrodošli" },
   { href: "#konoba", label: "Konoba" },
   { href: "#stol", label: "Za stolom" },
   { href: "#zaton", label: "Zaton" },
+  { href: "#galerija", label: "Galerija" },
   { href: "#kontakt", label: "Kontakt" },
 ];
 
@@ -40,8 +43,18 @@ export function SiteHeader() {
         }}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 md:px-8">
-          <a href="#dobrodosli" className="font-display text-xl tracking-[-0.01em] text-foreground md:text-2xl">
-            Konoba <em className="not-italic text-amber">Jaz</em>
+          {/* The owner's own mark (konobajaz.weebly.com). It is drawn in black
+              and red for a light background, so it sits on a cream plate here
+              rather than being recoloured — the logo is not ours to redraw. */}
+          <a href="#dobrodosli" aria-label="Konoba Jaz — početak">
+            <Image
+              src={`${BASE}/img/konoba-jaz-logo.png`}
+              alt="Konoba Jaz"
+              width={246}
+              height={125}
+              priority
+              className="h-11 w-auto rounded-md bg-[#F6EEDD] px-2.5 py-1 md:h-14"
+            />
           </a>
 
           <nav className="hidden items-center gap-8 md:flex">
