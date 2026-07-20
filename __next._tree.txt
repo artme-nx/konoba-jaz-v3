@@ -1,0 +1,9 @@
+:HL["/konoba-jaz-v3/_next/static/chunks/2hgva_d4_03bg.css","style"]
+:HL["/konoba-jaz-v3/_next/static/media/0494568ab28b6008-s.p.421v1u00lnp2a.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/konoba-jaz-v3/_next/static/media/23f1a98b08006014-s.p.0s5mkn35-hrc5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/konoba-jaz-v3/_next/static/media/54fc36028e2bb174-s.p.20jfceqj9zyw9.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/konoba-jaz-v3/_next/static/media/66b33cc02d8f8b9d-s.p.3slq8sz4zhb1g.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/konoba-jaz-v3/_next/static/media/6ab0db14f70d8ed6-s.p.13hnt-xgp82zk.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/konoba-jaz-v3/_next/static/media/797e433ab948586e-s.p.0r6juujl39pe6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/konoba-jaz-v3/_next/static/media/a343f882a40d2cc9-s.p.1sj6eobyi31rd.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"oigPJQWtv9rUqZf6rkIcp"}
